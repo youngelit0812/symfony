@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    Problem detected
+{% endblock %}
+{% block body %}
+    <div>
+        <p>
+            There was a problem: {{ exception.message }}
+        </p>
+    </div>
+{% endblock %}

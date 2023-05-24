@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+log_out:
+    path: /logout
+    controller: App\Controller\SecurityController::logout

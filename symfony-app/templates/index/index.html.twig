@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<style>
+    div {
+        margin: auto;        
+    }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .submit {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 12px;
+    }
+</style>
+
+<div class="example-wrapper">
+    <h1>Welcome ! ✅</h1>    
+</div>
+<div class="card bg-light mb-3 mt-5" style="width: 80%;">
+    <div class="card-body" style="width:100%;">
+        <div class="card-header mb-3 example-wrapper">Inserted Url Count : {{ inserted_record_cnt }} from {{ file_path }} File in {{ load_duration }}s. </div>
+        <div class="example-wrapper">
+            <form action="{{ path('app_post_index') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fileToUpload">Select a file:</label>
+                    <input type="file" id="fileToUpload" name="fileToUpload">                    
+                </div>
+                <div class="form-group">
+                    <button class="submit" type="submit">PARSE CSV FILE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
